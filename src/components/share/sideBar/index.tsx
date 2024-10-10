@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styles from "./sidebar.module.css";
-import SvgIcon from "../svgIcon/svgIcon";
 import ExpandList from "./expandList";
 import { LIST_MENU } from "./sideBar.utils";
 import { SidebarMainProps } from "./expandList.types";

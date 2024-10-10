@@ -2,7 +2,6 @@
 import {
   Action,
   ThunkAction,
-  combineReducers,
   configureStore,
 } from "@reduxjs/toolkit";
 import layoutReducer from "./slices/layout/layoutSlice";

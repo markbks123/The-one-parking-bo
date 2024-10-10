@@ -13,7 +13,6 @@ export interface ExpandListProps {
   currentSubMenu: string;
 }
 
-export interface UseExpandListProps extends ExpandListProps {}
 
 export interface SidebarMainProps {
   asPath: string;
