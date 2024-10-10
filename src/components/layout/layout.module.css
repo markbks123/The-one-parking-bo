@@ -1,0 +1,21 @@
+.container{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container  main {
+    display: flex;
+}
+
+.container main>.content {
+    background-color: var(--grey-color-2);
+    @apply relative w-full flex flex-col;
+}
+
+@media screen and (max-width: 767px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1024px) {}
+
+@media screen and (min-width: 3840px) {}

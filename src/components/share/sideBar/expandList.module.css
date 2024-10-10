@@ -1,0 +1,64 @@
+.container {
+    @apply flex justify-between items-center p-4;
+}
+
+.container>p {
+    color: var(--rvp-text-color);
+    transition: 0.3s;
+    @apply font-normal text-base;
+}
+
+.container>span>.rotation {
+    transform: rotate(180deg);
+}
+
+.container.active>p {
+    color: var(--primary-color-1);
+    @apply font-semibold;
+}
+
+.container.active>span svg path {
+    stroke: var(--primary-color-1);
+}
+
+.container+ul {
+    background-color: var(--grey-color-4);
+}
+
+.container+ul>li {
+    border-bottom: 1px solid var(--grey-color-2);
+    @apply flex py-4 px-8;
+}
+
+.container+ul>li.active {
+    color: var(--primary-color-1);
+    @apply font-semibold;
+}
+
+.container+ul>li:first-child {
+    border-top: 1px solid var(--grey-color-2);
+}
+
+.container+ul>li:hover {
+    color: var(--primary-color-1);
+    @apply cursor-pointer;
+}
+
+.container+ul>li>a {
+    @apply w-full;
+}
+
+/* กำลังพัฒนาใน PHASE หน้า */
+
+@media screen and (max-width: 767px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 320px;
+        @apply h-auto;
+    }
+}
+
+@media screen and (min-width: 3840px) {}

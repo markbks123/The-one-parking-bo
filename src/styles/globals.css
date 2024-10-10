@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color-1: #833ca4;
+  --primary-color-2: #f5ecf8;
+  --primary-color-3: #e4d1ee;
+  --primary-color-4: #572870;
+  --primary-color-5: #bc8bd4;
+  --primary-color-6: #5c2d90;
+  --primary-color-7: #f9f6fc;
+  --white-color: #ffffff;
+  --text-color: #000000;
+  --secondary-text-color: #a0abbb;
+  --grey-color: #e7eaee;
+  --grey-color-2: #d0d5dd;
+  --grey-color-3: #b8c0cc;
+  --grey-color-4: #dbdfe5;
+  --grey-color-5: #64748b;
+  --grey-color-6: #eceff1;
+  --grey-color-7: #7d828e;
+  --background-color: #f7f8f9;
+  --background-color-2: #e8edfb;
+  --error-color-1: #ef4444;
+  --error-color-2: #fee2e2;
+  --error-color-3: #FEF2F2;
+  --green-color-1: #059669;
+  --green-color-2: #34d399;
+  --green-color-3: #10b981;
+  --green-color-4: #14ae5c;
+  --yellow-color-1: #fef3c7;
+  --yellow-color-2: #f9bd23;
+  --yellow-color-3: #fbbf24;
+  --blue-color-3: #1586d5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

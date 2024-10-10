@@ -1,0 +1,70 @@
+.container {
+    width: 0;
+    height: 0;
+    transition: 0.5s;
+    overflow: hidden;
+    background-color: var(--grey-color);
+}
+
+.container .user {
+    background-color: var(--grey-color);
+    color: var(--white-color);
+    height: 64px;
+    @apply w-full flex justify-center items-center;
+}
+
+.container .user>div {
+    @apply flex gap-2;
+}
+
+.container .user>div:nth-child(2) {
+    @apply gap-4;
+}
+
+.container>ul {
+    overflow-y: auto;
+    min-height: calc(100vh - 64px);
+    @apply w-full;
+}
+
+.container>ul>li {
+    color: var(--text-color);
+    background-color: var(--grey-color-6);
+    transition: 0.3s;
+    border-bottom: 1px solid var(--grey-color);
+    @apply flex gap-2 p-4 font-normal text-base;
+}
+
+/* CURRENT PATH */
+.container>ul>li.active {
+    color: var(--primary-color-1);
+    @apply font-semibold;
+}
+
+/* CURRENT PATH */
+
+.container>ul>li:not(.hasItem):hover {
+    color: var(--primary-color-1);
+    @apply cursor-pointer;
+}
+
+.container>ul>li.hasItem {
+    @apply flex-col gap-0 p-0;
+}
+
+.container>ul>li>a {
+    @apply w-full;
+}
+
+@media screen and (max-width: 767px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 320px;
+        @apply h-auto;
+    }
+}
+
+@media screen and (min-width: 3840px) {}
