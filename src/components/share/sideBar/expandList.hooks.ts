@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { UseExpandListProps } from "./expandList.types";
+import {ExpandListProps } from "./expandList.types";
 
 export const useExpandList = ({
   data,
   currentTab,
   currentSubMenu,
-}: UseExpandListProps) => {
+}: ExpandListProps) => {
   const [expand, setExpand] = useState<boolean>(false);
 
   const handleClick = () => {

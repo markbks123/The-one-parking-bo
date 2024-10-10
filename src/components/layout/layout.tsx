@@ -4,7 +4,7 @@ import MainFooter from "../share/mainFooter/mainFooter";
 import { useLayout } from "./layout.hook";
 import SidebarMain from "../share/sideBar";
 const Layout: React.FC<LayoutContainerProps> = ({ children }) => {
-  const { header, footer, asPath, pathname } = useLayout();
+  const { asPath, pathname } = useLayout();
   return (
     <div className={styles.container}>
       <main>
