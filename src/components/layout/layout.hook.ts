@@ -12,9 +12,10 @@ export const useLayout = () => {
   const footer = useSelector((state: RootState) => state.layout.footer);
   const { pathname, asPath,locale, query } = router;
   useEffect(() => {
-    console.log("HEEEE")
-    router.push(FIRST_PAGE);
- 
+  
+  router.push({ pathname: FIRST_PAGE });
+    
+
   }, []);
 
   return {

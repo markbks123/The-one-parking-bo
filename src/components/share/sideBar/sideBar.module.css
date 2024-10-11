@@ -3,11 +3,12 @@
     height: 0;
     transition: 0.5s;
     overflow: hidden;
-    background-color: var(--grey-color);
+    background-color: var(--sidbar-color);
+
 }
 
 .container .user {
-    background-color: var(--grey-color);
+background-color: var(--sidbar-color);
     color: var(--white-color);
     height: 64px;
     @apply w-full flex justify-center items-center;
@@ -28,23 +29,29 @@
 }
 
 .container>ul>li {
-    color: var(--text-color);
-    background-color: var(--grey-color-6);
+    
+    color: var(--white-color);
+    background-color: var(--sidbar-color);
     transition: 0.3s;
-    border-bottom: 1px solid var(--grey-color);
     @apply flex gap-2 p-4 font-normal text-base;
 }
 
+.container>ul>li:hover {
+
+    background-color: var(--sidbar-color-2);
+    transition: 0.3s;
+    @apply flex gap-2 p-4 font-normal text-base;
+}
 /* CURRENT PATH */
 .container>ul>li.active {
-    color: var(--primary-color-1);
+    color: var(--white-color);
     @apply font-semibold;
 }
 
 /* CURRENT PATH */
 
 .container>ul>li:not(.hasItem):hover {
-    color: var(--primary-color-1);
+
     @apply cursor-pointer;
 }
 

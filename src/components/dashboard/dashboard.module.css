@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  /* Use flexbox layout */
+  /* Allow items to wrap onto multiple lines */
+  gap: 1rem;
+  /* Optional: Add space between cards */
+  justify-content: center;
+  margin-top: 100px;
+  margin-left: 20px;
+  flex-direction: column;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+ 
+}
+.chartContent{
+    display: flex;
+    justify-content: center;
+   
+}
+.side {
+  flex: 1;
+}
+
+.w-25 {
+  width: calc(100% / 4 - 3rem / 4);
+}
+
+.w-30 {
+  width: calc(100% / 3 - 2rem / 3);
+}
+
+.w-40 {
+  width: calc(40% - 0.5rem);
+}
+
+.w-50 {
+  width: calc(50% - 0.5rem);
+}
+
+.w-60 {
+  width: calc(60% - 0.5rem);
+}
+
+.w-100 {
+  width: calc(100% - 0rem);
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .cards {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 3840px) {
+}

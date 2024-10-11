@@ -1,0 +1,23 @@
+.container {
+  background-color: var(--white-color);
+  padding: 25px;
+  border-radius: 10px;
+  gap: 20px;
+  width: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+
+
+@media screen and (max-width: 767px) {
+.container {
+      width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {}
+
+@media screen and (min-width: 3840px) {}
