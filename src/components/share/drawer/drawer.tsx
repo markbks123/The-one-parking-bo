@@ -2,10 +2,9 @@ import { DrawertypeProps } from "./drawer.type";
 import { LIST_MENU } from "../sideBar/sideBar.utils";
 import { IoIosArrowForward } from "react-icons/io";
 import { useDrawer } from "./drawer.hook";
-import { Button, Drawer, Radio, Space } from "antd";
+import { Drawer } from "antd";
 import styles from "./drawer.module.css";
-import { Tooltip } from "antd";
-const DrawerContainer = ({ open, setOpen, onClose }: DrawertypeProps) => {
+const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
   const { navigation } = useDrawer();
 
   return (
@@ -29,12 +28,13 @@ const DrawerContainer = ({ open, setOpen, onClose }: DrawertypeProps) => {
       style={{ backgroundColor: "#0f141c" }}
     >
       <div className={styles.nav}>
-        {LIST_MENU.map((e) => (
+        {LIST_MENU.map((e, i) => (
           <button
+            key={i}
             className={styles.button}
             onClick={() => {
               navigation(e.path);
-              onClose;
+              onClose();
             }}
           >
             {e.name}

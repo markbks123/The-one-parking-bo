@@ -3,7 +3,7 @@ import { useHeader } from "./header.hook";
 import styles from "./header.module.css";
 import { RxHamburgerMenu } from "react-icons/rx";
 const Header = () => {
-  const { showDrawer, open, placement, onClose } = useHeader();
+  const { showDrawer, open, onClose } = useHeader();
   return (
     <div className={styles.container}>
       <div className="flex flex-grow items-center justify-between px-4 py-5 shadow-2 md:px-5 2xl:px-10">
