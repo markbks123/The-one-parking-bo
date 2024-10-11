@@ -25,4 +25,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f The-one-parking-bo-container
       - name: Run Docker Container
-        run: docker run -d -p 6000:6000 --name The-one-parking-bo-container  otakuict/mark-test-fe
+        run: docker run -d -p 3002:3002 --name The-one-parking-bo-container  otakuict/mark-test-fe

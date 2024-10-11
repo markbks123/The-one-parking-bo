@@ -32,7 +32,7 @@ COPY --from=builder /app/package.json ./package.json
 ENV NODE_ENV=production
 
 # Expose the default port (3000)
-EXPOSE 6000
+EXPOSE 3002
 
 # Run the Next.js app in production mode
 CMD ["npm", "run", "start"]
