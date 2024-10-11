@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./sidebar.module.css";
+import styles from "./sideBar.module.css";
 import ExpandList from "./expandList";
 import { LIST_MENU } from "./sideBar.utils";
 import { SidebarMainProps } from "./expandList.types";
