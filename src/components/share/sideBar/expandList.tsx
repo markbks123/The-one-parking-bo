@@ -32,7 +32,7 @@ const ExpandList = ({ data, currentTab, currentSubMenu }: ExpandListProps) => {
           />
         </span>
       </div>
-      {expand && (
+      {/* {expand && (
         <ul>
           {data.subList!.map((item, i) => (
             <li
@@ -43,7 +43,7 @@ const ExpandList = ({ data, currentTab, currentSubMenu }: ExpandListProps) => {
             </li>
           ))}
         </ul>
-      )}
+      )} */}
     </>
   );
 };

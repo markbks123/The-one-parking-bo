@@ -55,3 +55,8 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.ant-drawer-header-title {
+  justify-content: end !important;
+}

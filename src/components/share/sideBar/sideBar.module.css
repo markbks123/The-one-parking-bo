@@ -4,6 +4,7 @@
     transition: 0.5s;
     overflow: hidden;
     background-color: var(--sidbar-color);
+
 }
 
 .container .user {

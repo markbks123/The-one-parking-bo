@@ -5,7 +5,7 @@
   gap: 1rem;
   /* Optional: Add space between cards */
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 100px;
   margin-left: 20px;
   flex-direction: column;
 }
@@ -50,7 +50,7 @@
   width: calc(100% - 0rem);
 }
 
-/* กำลังพัฒนาใน PHASE หน้า */
+
 
 @media screen and (max-width: 767px) {
   .cards {
