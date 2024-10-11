@@ -1,5 +1,3 @@
-import { AiOutlineDocker } from "react-icons/ai";
-import { MdOutlinePointOfSale } from "react-icons/md";
 import { FaCarSide } from "react-icons/fa6";
 import { GiMoneyStack } from "react-icons/gi";
 export const cards = [

@@ -21,5 +21,5 @@ export const useHeader = () => {
           setOpen(false);
      }
   },[isDevice])
-  return {showDrawer,open,placement,onClose}
+  return {showDrawer,open,placement,onClose,setPlacement}
 };

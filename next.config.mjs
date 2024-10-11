@@ -8,6 +8,7 @@ const nextConfig = {
     "rc-picker",
     "rc-notification",
     "rc-tooltip",
+    "rc-omit",
   ],
 };
 

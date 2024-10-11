@@ -1,5 +1,4 @@
-import { useMemo } from "react";
-import { NavbarDrawerProps } from "./drawer.type";
+
 import { useRouter } from "next/router";
 
 
