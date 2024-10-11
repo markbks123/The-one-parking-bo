@@ -1,8 +1,9 @@
 import React from "react";
-import Chart from "react-apexcharts";
 
 import { ApexOptions } from "apexcharts";
 import styles from "./areaCharts.module.css";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 const AreaChart: React.FC = () => {
   const options: ApexOptions = {
     chart: {

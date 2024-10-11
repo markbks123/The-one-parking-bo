@@ -1,3 +1,4 @@
+"use client"
 import { DEVICE_TYPE } from "@/utils/type";
 import { useState, useEffect } from "react";
 
@@ -21,9 +22,11 @@ export const useDeviceType = () => {
       };
 
       handleResize();
-     
+      window.addEventListener("resize", handleResize);
 
-      
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
     }
   }, []);
 
