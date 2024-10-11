@@ -5,6 +5,7 @@ import Layout from "../components/layout/layout";
 import store from "../redux/store";
 
 function App({ Component, pageProps }: AppProps) {
+  console.log("from mum");
   return (
     <Provider store={store}>
       <Layout>
