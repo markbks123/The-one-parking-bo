@@ -1,8 +1,6 @@
+import DashBoardPageContainer from "@/components/dashboard";
+
 const DashbordPage: React.FC = () => {
-  return (
-    <div>
-      <h1>Hee</h1>
-    </div>
-  );
+  return <DashBoardPageContainer />;
 };
 export default DashbordPage;
