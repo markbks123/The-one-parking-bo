@@ -57,6 +57,118 @@ body {
 }
 
 
+button,
+button[type="button"],
+button[type="submit"] {
+  background-color: var(--primary-color-1);
+  color: var(--white-color);
+  @apply font-semibold text-lg py-4 px-5 rounded-lg text-center;
+}
+
+button:disabled,
+button[type="button"]:disabled,
+button[type="submit"]:disabled {
+  background-color: var(--grey-color-2);
+  color: var(--secondary-text-color);
+  cursor: not-allowed;
+}
+
+button:focus,
+button[type="button"]:focus,
+button[type="submit"]:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+input,
+textarea {
+  min-height: 48px;
+  border-color: var(--secondary-text-color);
+  background-color: var(--white-color);
+  @apply w-full border rounded-md text-lg font-normal px-3 py-2;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--secondary-text-color);
+  @apply font-normal text-lg;
+}
+
+input:disabled,
+textarea:disabled {
+  border-color: var(--grey-color-2);
+  background-color: var(--background-color);
+  color: var(--secondary-text-color);
+  cursor: not-allowed;
+}
+
+input:active,
+textarea:active {
+  border: 1px solid var(--primary-color-1);
+  box-shadow: none;
+  outline: none;
+}
+
+input:disabled:active,
+textarea:disabled:active {
+  border-color: var(--grey-color-2);
+  background-color: var(--background-color);
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--primary-color-1);
+  box-shadow: none;
+  outline: 2px solid var(--primary-color-3);
+}
+
+.primary[type="button"],
+.primary[type="submit"] {
+  background-color: var(--primary-color-1);
+  color: var(--white-color);
+  @apply font-semibold py-4 px-5 rounded-lg text-center;
+}
+
+.primary[type="button"]:disabled,
+.primary[type="submit"]:disabled {
+  background-color: var(--grey-color-2);
+  color: var(--secondary-text-color);
+  cursor: not-allowed;
+}
+
+.secondary[type="button"],
+.secondary[type="submit"] {
+  border-color: var(--primary-color-1);
+  color: var(--primary-color-1);
+  background-color: var(--white-color);
+  @apply font-semibold py-4 px-5 rounded-lg text-center border;
+}
+
+.secondary[type="button"]:disabled,
+.secondary[type="submit"]:disabled {
+  background-color: var(--white-color);
+  color: var(--grey-color-3);
+  border: 1px solid var(--grey-color-3);
+  cursor: not-allowed;
+}
+
+.error[type="button"],
+.error[type="submit"] {
+  border-color: var(--error-color-1);
+  color: var(--error-color-1);
+  background-color: var(--white-color);
+  @apply font-semibold py-4 px-5 rounded-lg text-center border;
+}
+
+.error[type="button"]:disabled,
+.error[type="submit"]:disabled {
+  background-color: var(--white-color);
+  color: var(--grey-color-3);
+  border: 1px solid var(--grey-color-3);
+  cursor: not-allowed;
+}
+
+
 .ant-drawer-header-title {
   justify-content: end !important;
 }

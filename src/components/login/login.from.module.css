@@ -1,0 +1,48 @@
+.container {
+    @apply w-full flex flex-col gap-6;
+  }
+  
+  .container > section:nth-child(1) {
+    @apply w-full flex flex-col gap-4;
+  }
+  
+  .container > section:nth-child(1) > .input > div:first-child {
+    top: 0.75rem;
+  }
+  
+  .container > section:nth-child(2) {
+    height: 24px;
+    @apply w-full flex justify-center gap-4;
+  }
+  
+  .container > section:nth-child(2) > a {
+    color: var(--primary-color-1);
+    border-right: 1px solid var(--primary-color-1);
+    text-decoration: underline;
+    @apply text-base font-normal pr-4;
+  }
+  
+  .container > section:nth-child(2) > a:hover {
+    @apply cursor-pointer;
+  }
+  
+  .container > section:nth-child(2) > a:last-child {
+    border-right: unset;
+    @apply pr-0;
+  }
+  
+  @media screen and (max-width: 767px) {
+  }
+  
+  @media screen and (min-width: 768px) {
+    .container {
+      max-width: 475px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+  }
+  
+  @media screen and (min-width: 3840px) {
+  }
+  

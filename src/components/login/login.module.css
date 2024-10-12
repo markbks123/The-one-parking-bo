@@ -1,0 +1,36 @@
+.container {
+    padding: 24px;
+    min-height: calc(100vh - 68px);
+    background-color: var(--white-color);
+    @apply flex flex-col justify-center items-center gap-6 py-6 p-0;
+  }
+  
+  .container > .logo {
+    align-self: flex-end;
+  }
+  
+  .container > h1 {
+    color: var(--primary-color-1);
+    @apply font-semibold text-2xl;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .container {
+      max-width: 100%;
+      @apply w-full;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .container {
+      max-width: 475px;
+      @apply w-full mx-auto;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+  }
+  
+  @media screen and (min-width: 3840px) {
+  }
+  

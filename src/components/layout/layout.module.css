@@ -12,10 +12,17 @@
     @apply relative w-full flex flex-col;
 }
 
+.container main>.contentLogin {
+ 
+    @apply  w-full flex flex-col;
+}
+
+
 @media screen and (max-width: 767px) {}
 
 @media screen and (min-width: 768px) {}
 
-@media screen and (min-width: 1024px) {}
-
+@media screen and (min-width: 1024px) {
+   
+}
 @media screen and (min-width: 3840px) {}

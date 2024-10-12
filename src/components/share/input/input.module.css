@@ -1,0 +1,51 @@
+.container {
+    @apply relative w-full relative flex flex-col gap-y-1;
+  }
+  
+  .container > .icon {
+    top: 2.6rem;
+    right: 1rem;
+    @apply absolute;
+  }
+  
+  .container > .password {
+    cursor: pointer;
+    top: 2.6rem;
+    right: 1rem;
+    @apply absolute;
+  }
+  
+  .container > label {
+    @apply font-normal text-lg;
+  }
+  
+  .container > label span {
+    color: var(--error-color-1);
+  }
+  
+  .container > .icon ~ input {
+    padding-right: 2rem;
+  }
+  
+  .container > .password ~ input {
+    padding-right: 2rem;
+  }
+  
+  .container > input.error {
+    border-color: var(--error-color-1);
+  }
+  
+  .container > input.error:focus {
+    border-color: var(--primary-color-1);
+  }
+  
+  .container > small {
+    color: var(--error-color-1);
+    @apply text-sm font-normal;
+  }
+  
+  .container > span {
+    color: var(--blue-color-3);
+    @apply text-sm font-normal;
+  }
+  
