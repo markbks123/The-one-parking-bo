@@ -14,13 +14,13 @@ export const useLayout = () => {
   const sidebar = useSelector((state: RootState) => state.layout.sidebar);
   const { pathname, asPath,locale, query } = router;
   const dispatch = useAppDispatch();
-  // useEffect(() => {
-  // //  if (typeof window !== 'undefined') {
-  // //   router.push({ pathname: FIRST_PAGE });
-  // // }
+  useEffect(() => {
+   
+    router.push({ pathname: "/login" });
+
 
   
-  // }, []);
+  }, []);
   
 
   return {

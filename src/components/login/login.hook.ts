@@ -10,5 +10,9 @@ export const useLoginPage = () =>{
     useEffect(() => {
         dispatch(setLayout({ header: false, main: true, footer: true,sidebar:false }));
       }, [dispatch]);
-      return{}
+
+      const handleSubmit = () =>{
+           router.push({ pathname: "/dashboard" });
+      }
+      return{handleSubmit}
 }

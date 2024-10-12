@@ -60,7 +60,7 @@ body {
 button,
 button[type="button"],
 button[type="submit"] {
-  background-color: var(--primary-color-1);
+  background-color: var(--blue-color-3);
   color: var(--white-color);
   @apply font-semibold text-lg py-4 px-5 rounded-lg text-center;
 }
@@ -104,7 +104,7 @@ textarea:disabled {
 
 input:active,
 textarea:active {
-  border: 1px solid var(--primary-color-1);
+  border: 1px solid var(--blue-color-3);
   box-shadow: none;
   outline: none;
 }
@@ -117,14 +117,14 @@ textarea:disabled:active {
 
 input:focus,
 textarea:focus {
-  border: 1px solid var(--primary-color-1);
+  border: 1px solid var(--white-color);
   box-shadow: none;
-  outline: 2px solid var(--primary-color-3);
+  outline: 2px solid var(--blue-color-3);
 }
 
 .primary[type="button"],
 .primary[type="submit"] {
-  background-color: var(--primary-color-1);
+  background-color: var(--blue-color-3);
   color: var(--white-color);
   @apply font-semibold py-4 px-5 rounded-lg text-center;
 }

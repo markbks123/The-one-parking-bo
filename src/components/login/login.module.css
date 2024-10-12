@@ -10,7 +10,7 @@
   }
   
   .container > h1 {
-    color: var(--primary-color-1);
+    color: var(--blue-color-3);
     @apply font-semibold text-2xl;
   }
   
