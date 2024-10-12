@@ -4,7 +4,6 @@ import styles from "./input.module.css";
 import SvgIcon from "../svgIcon/svgIcon";
 import cx from "classnames";
 
-
 const Input = <T,>({
   name,
   className = "",
@@ -12,7 +11,6 @@ const Input = <T,>({
   required = false,
   iconName,
   customLabel,
-  originalData,
   maxLength,
   ...props
 }: InputProps<T>) => {
@@ -39,7 +37,7 @@ const Input = <T,>({
         autoComplete={props.autoComplete || "off"}
         maxLength={maxLength}
       />
-      
+
       {meta.touched && meta.error && (
         <small className={styles.error}>{meta.error}</small>
       )}

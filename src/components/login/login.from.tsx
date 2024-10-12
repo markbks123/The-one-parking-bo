@@ -4,7 +4,7 @@ import Input from "../share/input/input";
 import PasswordInput from "../share/input/passwordInput";
 import styles from "./login.from.module.css";
 
-const LoginForm = ({ values, errors, dirty, handleSubmit }: LoginFormProps) => {
+const LoginForm = ({}: LoginFormProps) => {
   return (
     <Form className={styles.container}>
       <section>

@@ -18,7 +18,7 @@ const LoginPageContainer: React.FC = () => {
         onSubmit={handleSubmit}
       >
         {(props: FormikProps<LoginFormKeysProps>) => {
-          return <LoginFrom {...props} />;
+          return <LoginFrom check={"s"} {...props} />;
         }}
       </Formik>
     </div>
