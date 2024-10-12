@@ -1,5 +1,6 @@
 .container {
     padding: 24px;
+
     min-height: calc(100vh - 68px);
     background-color: var(--white-color);
     @apply flex flex-col justify-center items-center gap-6 py-6 p-0;
@@ -10,13 +11,14 @@
   }
   
   .container > h1 {
-    color: var(--primary-color-1);
+    color: var(--blue-color-3);
     @apply font-semibold text-2xl;
   }
   
   @media screen and (max-width: 767px) {
     .container {
       max-width: 100%;
+        padding: 24px;
       @apply w-full;
     }
   }
@@ -24,6 +26,7 @@
   @media screen and (min-width: 768px) {
     .container {
       max-width: 475px;
+      padding: 24px;
       @apply w-full mx-auto;
     }
   }

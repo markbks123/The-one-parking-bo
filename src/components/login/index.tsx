@@ -6,19 +6,19 @@ import { LoginFormKeysProps } from "./login.types";
 import LoginFrom from "./login.from";
 import { useLoginPage } from "./login.hook";
 const LoginPageContainer: React.FC = () => {
-  const {} = useLoginPage();
+  const { handleSubmit } = useLoginPage();
 
   return (
     <div className={styles.container}>
-      <h1>เข้าสู่ระบบ</h1>
+      <h1>Login</h1>
       <Formik
         enableReinitialize
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={() => {}}
+        onSubmit={handleSubmit}
       >
         {(props: FormikProps<LoginFormKeysProps>) => {
-          return <LoginFrom {...props} />;
+          return <LoginFrom check={"s"} {...props} />;
         }}
       </Formik>
     </div>

@@ -7,5 +7,6 @@ export interface LoginFormKeysProps {
 
   
   export interface LoginFormProps extends FormikProps<LoginFormKeysProps> {
+    check:string
   }
   
