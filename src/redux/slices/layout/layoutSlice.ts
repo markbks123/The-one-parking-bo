@@ -11,6 +11,7 @@ const layoutSlice = createSlice({
       state.header = action.payload.header;
       state.main = action.payload.main;
       state.footer = action.payload.footer;
+      state.sidebar=action.payload.sidebar;
     },
     setNotification: (
       state,
