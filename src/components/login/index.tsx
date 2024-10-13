@@ -10,17 +10,19 @@ const LoginPageContainer: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Login</h1>
-      <Formik
-        enableReinitialize
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {(props: FormikProps<LoginFormKeysProps>) => {
-          return <LoginFrom check={"s"} {...props} />;
-        }}
-      </Formik>
+      <div className={styles.wrap}>
+        <h1>Login</h1>
+        <Formik
+          enableReinitialize
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {(props: FormikProps<LoginFormKeysProps>) => {
+            return <LoginFrom check={"s"} {...props} />;
+          }}
+        </Formik>
+      </div>
     </div>
   );
 };

@@ -13,7 +13,7 @@
 }
 
 .container main>.contentLogin {
- 
+background-color: var(--grey-color-2);
     @apply  w-full flex flex-col;
 }
 

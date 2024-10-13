@@ -8,12 +8,13 @@
 .nav{
     display: flex;
     flex-direction: column;
-    gap:24;
+    gap:24px;
 }
 
 .button {
     transition: 0.3s;
-    color: var(--white-color);
+    background-color: none !important;
+    color: var(--white-color) !important;
     @apply flex gap-2 p-4 font-normal text-base;
 }
 

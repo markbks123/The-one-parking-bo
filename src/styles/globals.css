@@ -57,10 +57,10 @@ body {
 }
 
 
-button,
+/* button,
 button[type="button"],
 button[type="submit"] {
-  background-color: var(--blue-color-3);
+  background-color: var(--sidbar-color-2);
   color: var(--white-color);
   @apply font-semibold text-lg py-4 px-5 rounded-lg text-center;
 }
@@ -71,7 +71,7 @@ button[type="submit"]:disabled {
   background-color: var(--grey-color-2);
   color: var(--secondary-text-color);
   cursor: not-allowed;
-}
+} */
 
 button:focus,
 button[type="button"]:focus,
