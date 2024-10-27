@@ -1,0 +1,161 @@
+.w-25 {
+    width: calc(100% / 4 - 3rem / 4);
+  }
+  
+  .w-30 {
+    width: calc(100% / 3 - 2rem / 3);
+  }
+  
+  .w-40 {
+    width: calc(40% - 0.5rem);
+  }
+  
+  .w-50 {
+    width: calc(50% - 0.5rem);
+  }
+  
+  .w-60 {
+    width: calc(60% - 0.5rem);
+  }
+  
+  .w-100 {
+    width: calc(100% - 0rem);
+  }
+  
+  .wrapper {
+    /* padding: 1rem; */
+    @apply w-full;
+  }
+  
+  .container {
+    overflow-x: auto;
+    /* @apply w-full flex items-center justify-center; */
+    @apply w-full;
+  }
+  
+  .container > table {
+    border: 1px solid var(--grey-color-6);
+    /* border: 1px solid red; */
+    background-color: var(--white-color);
+    @apply w-full;
+  }
+  
+  .container > table > thead > tr {
+    @apply relative;
+  }
+  
+  .container > table > thead > tr > th {
+    border-bottom: 1px solid var(--grey-color-6);
+    border-right: 1px solid var(--grey-color-6);
+    background-color: var(--primary-color-1);
+    color: var(--white-color);
+    @apply font-bold text-base px-2 py-2;
+  }
+  
+  /* .container > table > thead > tr > th:last-child {
+    border-bottom: 1px solid var(--rvp-grey-color-6);
+    border-right: unset;
+    right: 0;
+    @apply sticky;
+  } */
+  
+  .container > table > tbody > tr {
+    @apply relative;
+  }
+  
+  .container > table > tbody > tr > td {
+    border-bottom: 1px solid var(--grey-color-6);
+    border-right: 1px solid var(--grey-color-6);
+    background-color: var(--white-color);
+    color: var(--text-color);
+    @apply font-normal text-base px-2 py-4;
+  }
+  
+  .container > table > tbody > tr > td.error {
+    background-color: var(--error-color-2);
+  }
+  
+  /* .container > table > tbody > tr > td:last-child {
+    right: 0;
+    @apply sticky;
+  } */
+  
+  .container > table > tbody > tr:last-child > td {
+    border-bottom: unset;
+  }
+  
+  .container > table > tbody > tr:last-child > td:last-child {
+    border-bottom: unset;
+    border-right: unset;
+  }
+  
+  /* .container > table > tbody > tr > td > .cell {
+    @apply text-center;
+  } */
+  
+  .container > table > tfoot > tr {
+    @apply relative;
+  }
+  
+  .container > table > tfoot > tr > td {
+    border-bottom: 1px solid var(--grey-color-6);
+    border-right: 1px solid var(--grey-color-6);
+    color: var(--primary-color-1);
+    background-color: var(--primary-color-7);
+    @apply font-bold text-base px-2 py-2;
+  }
+  
+  .container > table > tfoot > tr > td:first-child {
+    border-top: 1px solid var(--grey-color-6);
+    @apply font-bold text-right text-base px-2 py-4;
+  }
+  
+  .container > table > tfoot > tr:first-child > td {
+    border-top: 1px solid var(--grey-color-6);
+  }
+  
+  .container > table > tfoot > tr:last-child > td:last-child {
+    border-bottom: unset;
+    border-right: unset;
+  }
+  
+  .container > table > tbody > tr.subRow > td:last-child {
+    position: unset;
+    right: unset;
+    @apply py-4 px-12;
+  }
+  
+  /* Expand Column */
+  .expand {
+    @apply cursor-pointer flex items-center justify-center;
+  }
+  
+  .expand > .iconH {
+    transform: rotate(180deg);
+  }
+  
+  .expand > .iconH.hide {
+    transform: rotate(360deg);
+  }
+  
+  .expand > .iconC {
+    transform: rotate(180deg);
+  }
+  
+  .expand > .iconC.hide {
+    transform: rotate(360deg);
+  }
+  /* Expand Column */
+  
+  @media screen and (max-width: 767px) {
+  }
+  
+  @media screen and (min-width: 768px) {
+  }
+  
+  @media screen and (min-width: 1024px) {
+  }
+  
+  @media screen and (min-width: 3840px) {
+  }
+  
