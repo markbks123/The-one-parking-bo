@@ -3,9 +3,8 @@ import { ReactNode } from "react";
 export interface CardProps {
   id: number;
   title: string;
-  total: number;
+  total: string;
   icons: ReactNode;
-  change: number;
 }
 export interface itemCardProps {
   className: string;

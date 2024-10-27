@@ -2,8 +2,8 @@ export interface DashBoardState {
   error: string | null;
   loading: boolean;
   income: number;
-  car_amount: number;
-  graph:GraphResponse| null;
+  carAmount: number;
+  graph:GraphResponse;
 }
 
 export interface IncomeRequest {
@@ -15,21 +15,26 @@ export interface IncomeResponse {
 }
 
 export interface GraphResponse {
-  Jan: number;
-  Feb: number;
-  Mar: number;
-  Apr: number;
-  May: number;
-  Jun: number;
-  Jul: number;
-  Aug: number;
-  Sep: number;
-  Oct: number;
-  Nov: number;
-  Dec: number;
+  jan: number;
+  feb: number;
+  mar: number;
+  apr: number;
+  may: number;
+  jun: number;
+  jul: number;
+  aug: number;
+  sep: number;
+  oct: number;
+  nov: number;
+  dec: number;
 }
 
 
 export interface GraphRequest {
     year:string;
+}
+
+
+export  interface CarResponse {
+   carAmount: number
 }

@@ -57,7 +57,7 @@ body {
 }
 
 
-button,
+/* button,
 button[type="button"],
 button[type="submit"] {
   background-color: var(--primary-color-1);
@@ -78,7 +78,7 @@ button[type="button"]:focus,
 button[type="submit"]:focus {
   box-shadow: none;
   outline: none;
-}
+} */
 
 input,
 textarea {
@@ -122,13 +122,20 @@ textarea:focus {
   outline: 2px solid var(--primary-color-3);
 }
 
-.primary[type="button"],
+/* .primary[type="button"],
 .primary[type="submit"] {
   background-color: var(--primary-color-1);
   color: var(--white-color);
   @apply font-semibold py-4 px-5 rounded-lg text-center;
 }
 
+
+.drawer[type="button"],
+.drawer[type="submit"] {
+  background-color: var(--sidbar-color);
+  color: var(--white-color);
+  @apply font-semibold py-4 px-5 rounded-lg text-center;
+}
 .primary[type="button"]:disabled,
 .primary[type="submit"]:disabled {
   background-color: var(--grey-color-2);
@@ -142,7 +149,7 @@ textarea:focus {
   color: var(--primary-color-1);
   background-color: var(--white-color);
   @apply font-semibold py-4 px-5 rounded-lg text-center border;
-}
+} */
 
 .secondary[type="button"]:disabled,
 .secondary[type="submit"]:disabled {

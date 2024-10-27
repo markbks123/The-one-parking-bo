@@ -6,8 +6,12 @@ import { GraphContainerProps } from "./areaCharts.types";
 import YearSelector from "../../yearSelect/yearSelect";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
-// #008FFB
-const AreaChart = ({ graph, year, handleYearChange }: GraphContainerProps) => {
+
+const AreaCarChart = ({
+  graph,
+  year,
+  handleYearChange,
+}: GraphContainerProps) => {
   const options: ApexOptions = {
     chart: {
       height: 350,
@@ -20,7 +24,7 @@ const AreaChart = ({ graph, year, handleYearChange }: GraphContainerProps) => {
         show: false,
       },
     },
-    colors: ["#00E396"],
+    colors: ["#008FFB"],
     dataLabels: {
       enabled: false,
     },
@@ -48,11 +52,11 @@ const AreaChart = ({ graph, year, handleYearChange }: GraphContainerProps) => {
       intersect: false,
     },
     title: {
-      text: "รายได้",
-      align: "left",
+      text: "จำนวนรถ",
       style: {
         fontSize: "24px",
       },
+      align: "left",
     },
   };
 
@@ -74,11 +78,11 @@ const AreaChart = ({ graph, year, handleYearChange }: GraphContainerProps) => {
 
   const series = [
     {
-      name: "Income",
+      name: "Car",
       data: incomeData,
     },
   ];
-  console.log(graph, "incomeData");
+
   return (
     <div className={styles.container}>
       <YearSelector year={year} handleYearChange={handleYearChange} />
@@ -89,4 +93,4 @@ const AreaChart = ({ graph, year, handleYearChange }: GraphContainerProps) => {
   );
 };
 
-export default AreaChart;
+export default AreaCarChart;
