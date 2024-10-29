@@ -1,4 +1,6 @@
+import PromotionContainer from "@/components/promotion";
+
 const PromotionPage: React.FC = () => {
-  return <div></div>;
+  return <PromotionContainer />;
 };
 export default PromotionPage;
