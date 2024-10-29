@@ -11,3 +11,8 @@ export const numberWithCommas = (number: number): string => {
       maximumFractionDigits: 2,
     });
   };
+
+
+  export function parseCurrencyToNumber(currency: string): string {
+  return parseFloat(currency.replace(/,/g, "")).toString();
+}

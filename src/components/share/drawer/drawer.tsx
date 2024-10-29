@@ -15,7 +15,7 @@ const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
       closeIcon={
         <IoIosArrowForward
           style={{
-            color: "#fff",
+            color: "#fffffff",
             fontSize: "20px",
             display: "flex",
             flexDirection: "row",
@@ -29,7 +29,7 @@ const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
     >
       <div className={styles.nav}>
         {LIST_MENU.map((e, i) => (
-          <button
+          <div
             key={i}
             className={styles.button}
             onClick={() => {
@@ -38,7 +38,7 @@ const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
             }}
           >
             {e.name}
-          </button>
+          </div>
         ))}
       </div>
     </Drawer>

@@ -19,11 +19,27 @@
 }
 .chartContent{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px;
    
 }
 .side {
   flex: 1;
+}
+
+
+.select_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items:center;
+  padding-right: 24px;
+}
+.select_container > p {
+  font-size: 24px;
+  margin-right: 24px;
+  font-weight: 400;
 }
 
 .w-25 {
@@ -56,6 +72,13 @@
   .cards {
     flex-direction: column;
   }
+    .chartContent {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 24px;
+  
+    }
 }
 
 @media screen and (min-width: 768px) {

@@ -1,0 +1,9 @@
+.input {
+    width: 100%;
+}
+
+.error {
+    margin-top: 8px;
+    border-color: var(--error-color-1);
+    color: var(--error-color-1)
+}
