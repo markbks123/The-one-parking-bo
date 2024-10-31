@@ -7,7 +7,7 @@ const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 class ApiClient {
   private http: AxiosInstance;
-
+   
   constructor(
     baseURL: string = `${apiBaseUrl}`,
     timeout: number = 30000

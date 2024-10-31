@@ -6,17 +6,22 @@ import AreaChart from "../share/chart/AreaCharts/areaCharts";
 
 import { Select } from "antd";
 import YearSelector from "../share/yearSelect/yearSelect";
-import AreaCarChart from "../share/chart/AreaCharts/areaChartsCar.module";
+import AreaCarChart from "../share/chart/AreaCharts/areaChartsCar";
+import PeakTimeChart from "../share/chart/AreaCharts/areaChartsTime";
 
 const DashBoardPageContainer: React.FC = () => {
   const {
     handledMonth,
     handledYearChange,
+    handledYearCarChange,
     isDevice,
     year,
+    yearCar,
     month,
     cards,
     graph,
+    graphCar,
+    graphTime,
   } = useDashboard();
   return (
     <div className={styles.wrapper}>
@@ -44,7 +49,6 @@ const DashBoardPageContainer: React.FC = () => {
           ]}
         />
       </div>
-
       <div className={styles.cards}>
         {cards.map((item) => (
           <Card
@@ -58,12 +62,19 @@ const DashBoardPageContainer: React.FC = () => {
       </div>
       <div className={styles.chartContent}>
         <AreaCarChart
+          graph={graphCar}
+          year={yearCar}
+          handleYearChange={handledYearCarChange}
+        />
+        <AreaChart
           graph={graph}
           year={year}
           handleYearChange={handledYearChange}
         />
-        <AreaChart
-          graph={graph}
+      </div>
+      <div className={styles.chartContentTime}>
+        <PeakTimeChart
+          graph={graphTime}
           year={year}
           handleYearChange={handledYearChange}
         />

@@ -2,6 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { initialState } from "./dashboard.utils";
 import {
   CarResponse,
+  GraphPeaktimeResponse,
   GraphResponse,
   IncomeResponse,
 } from "@/redux/types/dashboardSlice.types";
@@ -19,6 +20,30 @@ const dashboardSlice = createSlice({
       state.graph = action.payload;
     },
     graphFailure: (state, action: PayloadAction<string>) => {
+      state.loading = false;
+      state.error = action.payload || "An error occurred.";
+    },
+    graphCarStart: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    graphCarSuccess: (state, action: PayloadAction<GraphResponse >) => {
+      state.loading = false;
+      state.graphCar = action.payload;
+    },
+     graphCarFailure: (state, action: PayloadAction<string>) => {
+      state.loading = false;
+      state.error = action.payload || "An error occurred.";
+    },
+    graphPeaktimeStart: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    graphPeaktimeSuccess: (state, action: PayloadAction<GraphPeaktimeResponse>) => {
+      state.loading = false;
+      state.graphPeaktime = action.payload;
+    },
+     graphPeaktimeFailure: (state, action: PayloadAction<string>) => {
       state.loading = false;
       state.error = action.payload || "An error occurred.";
     },
@@ -53,12 +78,18 @@ export const {
   graphStart,
   graphSuccess,
   graphFailure,
+  graphCarStart,
+  graphCarSuccess,
+  graphCarFailure,
+  graphPeaktimeStart,
+  graphPeaktimeSuccess,
+  graphPeaktimeFailure,
   incomeStart,
   incomeSuccess,
   incomeFailure,
   totalCarStart,
   totalCarSuccess,
-  totalCarFailure
+  totalCarFailure,
 } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

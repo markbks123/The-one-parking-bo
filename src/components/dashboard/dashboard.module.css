@@ -24,6 +24,15 @@
     padding: 24px;
    
 }
+
+
+.chartContentTime {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+
+}
 .side {
   flex: 1;
 }

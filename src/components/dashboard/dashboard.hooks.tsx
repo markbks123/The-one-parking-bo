@@ -1,7 +1,9 @@
 import { useDeviceType } from "@/hooks/useDeviceType";
 import {
+  getCarGraph,
   getGraph,
   getIncome,
+  getTimeGraph,
   getTotalCar,
 } from "@/redux/slices/dashboard/dashboardActions";
 import { setLayout } from "@/redux/slices/layout/layoutSlice";
@@ -21,8 +23,13 @@ export const useDashboard = () => {
   const isDevice = useDeviceType();
   const dispatch = useAppDispatch();
   const [year, setyear] = useState<number>(date.getFullYear());
+  const [yearCar, setyearCar] = useState<number>(date.getFullYear());
   const [month, setmonth] = useState<number>(date.getMonth());
   const graph = useSelector((state: RootState) => state.dashboard.graph);
+  const graphCar = useSelector((state: RootState) => state.dashboard.graphCar);
+  const graphTime = useSelector(
+    (state: RootState) => state.dashboard.graphPeaktime
+  );
   const loading = useSelector((state: RootState) => state.dashboard.loading);
   const carAmount = useSelector(
     (state: RootState) => state.dashboard.carAmount
@@ -55,13 +62,13 @@ export const useDashboard = () => {
     {
       id: 1,
       title: "จำนวนรถทั้งหมด",
-      total: carAmount + "  คัน" + " ของเดือน" + getMonthName(month),
+      total: carAmount + "  คัน" + " ของเดือน" + getMonthName(month - 1),
       icons: <FaCarSide size={48} />,
     },
     {
       id: 2,
       title: "จำนวนรายได้ทั้งหมด",
-      total: inCome + "  บาท" + " ของเดือน" + getMonthName(month),
+      total: inCome + "  บาท" + " ของเดือน" + getMonthName(month - 1),
       icons: <GiMoneyStack size={48} />,
     },
   ];
@@ -72,6 +79,11 @@ export const useDashboard = () => {
   const handledYearChange = (year: number) => {
     setyear(year);
   };
+
+  const handledYearCarChange = (year: number) => {
+    setyearCar(year);
+  };
+
   useEffect(() => {
     dispatch(
       setLayout({ header: true, main: true, footer: true, sidebar: true })
@@ -86,6 +98,17 @@ export const useDashboard = () => {
   }, [year]);
 
   useEffect(() => {
+    dispatch(getTimeGraph(() => {}));
+  }, []);
+
+  useEffect(() => {
+    const request: GraphRequest = {
+      year: yearCar.toString(),
+    };
+    dispatch(getCarGraph(request, () => {}));
+  }, [yearCar]);
+
+  useEffect(() => {
     const request: IncomeRequest = {
       month: month,
     };
@@ -96,11 +119,15 @@ export const useDashboard = () => {
   return {
     handledMonth,
     handledYearChange,
+    handledYearCarChange,
     isDevice,
     graph,
+    graphCar,
     loading,
     month,
     year,
+    yearCar,
     cards,
+    graphTime,
   };
 };
