@@ -15,7 +15,7 @@ const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
       closeIcon={
         <IoIosArrowForward
           style={{
-            color: "#fffffff",
+            color: "#ffffff",
             fontSize: "20px",
             display: "flex",
             flexDirection: "row",
