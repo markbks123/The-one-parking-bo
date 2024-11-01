@@ -46,6 +46,7 @@ const AreaChart = ({ graph, year, handleYearChange }: GraphContainerProps) => {
     tooltip: {
       shared: true,
       intersect: false,
+     
     },
     title: {
       text: "รายได้",

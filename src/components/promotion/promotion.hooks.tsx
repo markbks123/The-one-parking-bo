@@ -104,7 +104,8 @@ export const usePromotion = () => {
           <SvgIcon icon="orderAction" width={24} height={24} />
           <div className={styles.dropdown}>
             <ul>
-              <li onClick={() => {}}>คืนสถานะกรมธรรม์</li>
+              <li onClick={() => {}}>แก้ไขแพ็คแกจ</li>
+              <li onClick={() => {}}>ลบแพ็คแกจ</li>
             </ul>
           </div>
         </div>

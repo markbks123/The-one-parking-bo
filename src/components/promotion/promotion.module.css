@@ -34,8 +34,18 @@
     color: var(--rvp-secondary-text-color);
     @apply cursor-not-allowed;
   }
-
-
+  .select_container > p {
+    font-size: 24px;
+    margin-right: 24px;
+    font-weight: 400;
+  }
+  .select_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    padding-right: 24px;
+  }
   .wrapper {
     display: flex;
     /* Use flexbox layout */
