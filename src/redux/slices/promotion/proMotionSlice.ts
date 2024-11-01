@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { initialState } from "./proMotion.utils";
+import { PackageTable } from "@/redux/types/proMotionSlice.types";
 
 
 
@@ -53,6 +54,18 @@ const promotionSlice =createSlice({
         state.loading = false;
         state.error = action.payload || "An error occurred.";
      },
+     getTableProMotionStart:(state) =>{
+      state.loading =true;
+      state.error =null;
+     },
+     getTableProMotionSuccess:(state,action:PayloadAction<PackageTable[]>) =>{
+      state.loading =false;
+     state.packageTable =action.payload
+   },
+   getTableProMotionFailure:(state,action: PayloadAction<string>) =>{
+      state.loading = false;
+      state.error = action.payload || "An error occurred.";
+   },
   }
 
 
@@ -70,6 +83,9 @@ export const {
     updatePackageSuccess,
     updatePackageFailure,
     deletePackageStart,
+    getTableProMotionStart,
+    getTableProMotionSuccess,
+    getTableProMotionFailure
 
 } = promotionSlice.actions;
 

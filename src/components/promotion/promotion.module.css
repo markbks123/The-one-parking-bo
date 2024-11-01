@@ -1,0 +1,52 @@
+.status {
+    @apply flex justify-center items-center !important;
+  }
+  
+  .action {
+    @apply relative flex justify-center items-center;
+  }
+  
+  .action > .dropdown {
+    background-color: var(--white-color);
+    border: 1px solid var(--secondary-text-color);
+    overflow: hidden;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    @apply hidden absolute rounded-xl;
+  }
+  
+  .action:hover .dropdown {
+    @apply flex;
+  }
+  
+  .action > .dropdown > ul li {
+    text-wrap: nowrap;
+    @apply flex items-center gap-3 p-2 text-base font-normal;
+  }
+  
+  .action > .dropdown > ul li:hover {
+    background-color: var(--rvp-background-color);
+    @apply cursor-pointer;
+  }
+  
+  .action > .dropdown > ul li[aria-disabled="true"] {
+    color: var(--rvp-secondary-text-color);
+    @apply cursor-not-allowed;
+  }
+
+
+  .wrapper {
+    display: flex;
+    /* Use flexbox layout */
+    /* Allow items to wrap onto multiple lines */
+    gap: 1rem;
+    /* Optional: Add space between cards */
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 150px;
+    flex-direction: column;
+  }
+  
