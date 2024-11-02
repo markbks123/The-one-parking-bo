@@ -2,6 +2,7 @@ import DrawerContainer from "../drawer/drawer";
 import { useHeader } from "./header.hook";
 import styles from "./header.module.css";
 import { RxHamburgerMenu } from "react-icons/rx";
+
 const Header = () => {
   const { showDrawer, open, onClose } = useHeader();
   return (
@@ -10,6 +11,7 @@ const Header = () => {
         <div className={styles.icons}>
           <RxHamburgerMenu size={36} onClick={showDrawer} />
         </div>
+
         <DrawerContainer open={open} setOpen={showDrawer} onClose={onClose} />
       </div>
     </div>

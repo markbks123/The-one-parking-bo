@@ -1,0 +1,37 @@
+.container {
+    background-color: var(--background-color-2);
+    @apply flex flex-col items-center gap-y-6 py-10 px-8;
+  }
+  
+  .container > h1 {
+    color: var(--sidbar-color);
+    font-size: 24px !important;
+    @apply font-semibold text-base;
+  }
+  
+  .container > p {
+    color: var(--text-color);
+    @apply font-normal text-base text-center;
+  }
+  
+  .container > div {
+    @apply w-full flex flex-col gap-4;
+  }
+  
+  .container > div > .buttonSubmit {
+    max-width: 200px;
+    background-color: var(--sidbar-color);
+    color: var(--secondary-text-color);
+    @apply font-semibold text-lg py-4 px-5 rounded-lg text-center;
+    @apply w-full mx-auto;
+  }
+
+
+  .container > div > .buttonClose {
+    
+    max-width: 200px;
+    background-color: var(--white-color);
+    color: var(--text-color);
+    @apply font-semibold text-lg py-4 px-5 rounded-lg text-center;
+    @apply w-full mx-auto;
+  }

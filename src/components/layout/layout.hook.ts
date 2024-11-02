@@ -14,13 +14,13 @@ export const useLayout = () => {
   const sidebar = useSelector((state: RootState) => state.layout.sidebar);
   const { pathname, asPath,locale, query } = router;
   // const dispatch = useAppDispatch();
-  useEffect(() => {
+  // useEffect(() => {
    
-    router.push({ pathname: "/login" });
+  //   router.push({ pathname: "/login" });
 
 
   
-  }, []);
+  // }, []);
   
 
   return {

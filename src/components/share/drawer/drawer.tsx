@@ -4,6 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { useDrawer } from "./drawer.hook";
 import { Drawer } from "antd";
 import styles from "./drawer.module.css";
+import Image from "next/image";
 const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
   const { navigation } = useDrawer();
 
@@ -15,7 +16,7 @@ const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
       closeIcon={
         <IoIosArrowForward
           style={{
-            color: "#fff",
+            color: "#ffffff",
             fontSize: "20px",
             display: "flex",
             flexDirection: "row",
@@ -28,8 +29,24 @@ const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
       style={{ backgroundColor: "#0f141c" }}
     >
       <div className={styles.nav}>
+        <div
+          style={{
+            width: "100%",
+            position: "relative",
+            justifyContent: "center",
+            display: "flex",
+            paddingTop: "24px",
+          }}
+        >
+          <Image
+            src={"/images/logo_one.png"}
+            width={150}
+            height={150}
+            alt={""}
+          />
+        </div>
         {LIST_MENU.map((e, i) => (
-          <button
+          <div
             key={i}
             className={styles.button}
             onClick={() => {
@@ -38,7 +55,7 @@ const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
             }}
           >
             {e.name}
-          </button>
+          </div>
         ))}
       </div>
     </Drawer>

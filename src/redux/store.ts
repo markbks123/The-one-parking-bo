@@ -7,10 +7,12 @@ import {
 import { useDispatch } from "react-redux";
 import layoutReducer from "./slices/layout/layoutSlice";
 import  promotionReducer from "./slices/promotion/proMotionSlice";
+import  dashboardReducer from "./slices/dashboard/dashboardSlice";
 const store = configureStore({
   reducer: {
        layout: layoutReducer,
-       promotion:promotionReducer
+       promotion:promotionReducer,
+       dashboard:dashboardReducer
   },
 });
 

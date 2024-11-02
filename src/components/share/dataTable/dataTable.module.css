@@ -47,7 +47,7 @@
   .container > table > thead > tr > th {
     border-bottom: 1px solid var(--grey-color-6);
     border-right: 1px solid var(--grey-color-6);
-    background-color: var(--primary-color-1);
+    background-color: var(--sidbar-color);
     color: var(--white-color);
     @apply font-bold text-base px-2 py-2;
   }
