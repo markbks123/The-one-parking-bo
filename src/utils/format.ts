@@ -28,3 +28,50 @@ export const numberWithCommas = (number: number): string => {
 export function dateFormat(date: string | Date, format: string) {
   return dayjs(date).locale("th").format(format);
 }
+
+
+export const dateStringShortFormat = (date: Date, locale = "th"): string => {
+  return date.toLocaleDateString(locale, {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};
+export const dateStringLongFormat = (date: Date, locale = "th"): string => {
+  return date.toLocaleDateString(locale, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+
+
+export const dateStringLongWithTimeFormat = (
+  date: Date,
+  locale = "th"
+): string => {
+  return (
+    dateStringLongFormat(date) +
+    " " +
+    date.toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit" }) +
+    " น."
+  );
+};
+
+
+export const getInputOriginalValue = <T extends Record<string, any>>(
+  data: T,
+  path: string
+): any => {
+  const keys = path.split(".");
+  let result: any = data;
+
+  for (const key of keys) {
+    if (result[key] === undefined) {
+      return undefined;
+    }
+    result = result[key];
+  }
+
+  return result;
+};

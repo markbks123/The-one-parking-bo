@@ -26,12 +26,12 @@
   }
   
   .action > .dropdown > ul li:hover {
-    background-color: var(--rvp-background-color);
+    background-color: var(--background-color);
     @apply cursor-pointer;
   }
   
   .action > .dropdown > ul li[aria-disabled="true"] {
-    color: var(--rvp-secondary-text-color);
+    color: var(--secondary-text-color);
     @apply cursor-not-allowed;
   }
   .select_container > p {

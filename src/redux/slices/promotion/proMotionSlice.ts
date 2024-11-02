@@ -83,6 +83,8 @@ export const {
     updatePackageSuccess,
     updatePackageFailure,
     deletePackageStart,
+    deletePackageSuccess,
+    deletePackageFailure,
     getTableProMotionStart,
     getTableProMotionSuccess,
     getTableProMotionFailure
