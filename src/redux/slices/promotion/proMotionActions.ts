@@ -9,11 +9,15 @@ import {
   getTableProMotionFailure,
   getTableProMotionStart,
   getTableProMotionSuccess,
+  updatePackageFailure,
+  updatePackageStart,
+  updatePackageSuccess,
 } from "./proMotionSlice";
 import { request } from "http";
 import {
   CreatePromotionRequest,
   DeletePromotionRequest,
+  EditCreatePromotionRequest,
 } from "./proMotion.utils";
 
 const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -66,11 +70,8 @@ export const deletePackage =
   async (dispatch) => {
     dispatch(deletePackageStart());
     try {
-      const {id} = request
-      console.log( request, " request")
-      await api.delete(`${apiBaseUrl}/back-office/delete-package`,{
-        id: id
-      });
+     
+      await api.delete(`${apiBaseUrl}/back-office/delete-package/${request.id}`)
       dispatch(deletePackageSuccess());
       callback(true);
     } catch (error: any) {
@@ -78,6 +79,31 @@ export const deletePackage =
         error.response?.data?.message || "An error occurred.";
       console.error(error);
       dispatch(deletePackageFailure(errorMessage));
+      callback(false);
+    }
+  };
+
+
+
+  export const editPackage =
+  (
+    request: EditCreatePromotionRequest,
+    callback: (check: boolean) => void
+  ): AppThunk =>
+  async (dispatch) => {
+    dispatch( updatePackageStart());
+    try {
+     await api.put(
+        `${apiBaseUrl}/back-office/update-package`,
+        request
+      );
+      dispatch(updatePackageSuccess());
+      callback(true);
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || "An error occurred.";
+      console.error(error);
+      dispatch(updatePackageFailure(errorMessage));
       callback(false);
     }
   };

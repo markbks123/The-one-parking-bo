@@ -4,6 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { useDrawer } from "./drawer.hook";
 import { Drawer } from "antd";
 import styles from "./drawer.module.css";
+import Image from "next/image";
 const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
   const { navigation } = useDrawer();
 
@@ -28,6 +29,22 @@ const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
       style={{ backgroundColor: "#0f141c" }}
     >
       <div className={styles.nav}>
+        <div
+          style={{
+            width: "100%",
+            position: "relative",
+            justifyContent: "center",
+            display: "flex",
+            paddingTop: "24px",
+          }}
+        >
+          <Image
+            src={"/images/logo_one.png"}
+            width={150}
+            height={150}
+            alt={""}
+          />
+        </div>
         {LIST_MENU.map((e, i) => (
           <div
             key={i}

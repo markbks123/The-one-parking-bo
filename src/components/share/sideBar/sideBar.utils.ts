@@ -10,10 +10,7 @@ export const LIST_MENU: MenuProps[] = [
     path: "/promotion",
   },
   
-{
-    name: "Management",
-    path: "/management",
-  },
+
 ];
 
 export const FIRST_PAGE: string = "/dashboard";

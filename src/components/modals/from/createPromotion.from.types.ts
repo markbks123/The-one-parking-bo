@@ -1,3 +1,4 @@
+import { PACKAGE_TYPE } from "@/redux/slices/promotion/proMotion.utils";
 import { FormikProps } from "formik";
 
 export interface CreatePromotionFormKeysProps {
@@ -6,7 +7,7 @@ export interface CreatePromotionFormKeysProps {
    amount:string;
    startAt:string;
    expiredAt:string;
-
+    package: PACKAGE_TYPE
   }
   
 

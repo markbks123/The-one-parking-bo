@@ -13,7 +13,26 @@ export interface CreatePromotionRequest {
   startAt: string;
   expiredAt: string;
   packageType: string;
+   isActive:boolean
 }
 export interface DeletePromotionRequest {
   id: string;
+}
+
+export enum PACKAGE_TYPE {
+  STANDARD = "STANDARD",
+  PROMOTION = "PROMOTION",
+}
+
+
+
+export interface EditCreatePromotionRequest {
+   id:string;
+  package: string;
+  days: string;
+  amount: string;
+  startAt: string;
+  expiredAt: string;
+  packageType: string;
+   isActive:boolean
 }

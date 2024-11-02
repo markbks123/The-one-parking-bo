@@ -1,3 +1,4 @@
+import { PACKAGE_TYPE } from "@/redux/slices/promotion/proMotion.utils";
 import { CreatePromotionFormKeysProps, CreatePromotionFormProps } from "../from/createPromotion.from.types";
 
 export enum PROMOTION_MODAL_STATE {
@@ -12,9 +13,10 @@ export enum PROMOTION_MODAL_STATE {
 
 
 export const initialValues: CreatePromotionFormKeysProps = {
-   name:"",
-   days:"",
-   amount:"",
-   startAt:"",
-   expiredAt:"",
+   name: "",
+   days: "",
+   amount: "",
+   startAt: "",
+   expiredAt: "",
+   package: PACKAGE_TYPE.STANDARD
 };

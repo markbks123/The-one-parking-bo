@@ -14,9 +14,14 @@ const PromotionModal = ({
   onSubmit,
   status,
   name,
-  promotion
+  promotion,
 }: ProMotionModalProps) => {
-     const {promotionInitialValues,  handleAddPromotion, handleDelete}= usePromotionModal({promotion},  {closeModal})
+  const {
+    promotionInitialValues,
+    handleAddPromotion,
+    handleDelete,
+    handleEdit,
+  } = usePromotionModal({ promotion }, { closeModal });
   switch (status) {
     case PROMOTION_MODAL_STATE.CREATE:
       return (
@@ -32,30 +37,38 @@ const PromotionModal = ({
             onSubmit={handleAddPromotion}
           >
             {(props: FormikProps<CreatePromotionFormKeysProps>) => {
-              return <CreatPromotionFrom {...props}closeModal={closeModal} edit ={false} />;
+              return (
+                <CreatPromotionFrom
+                  {...props}
+                  closeModal={closeModal}
+                  edit={false}
+                />
+              );
             }}
           </Formik>
         </ModalComponent>
       );
     case PROMOTION_MODAL_STATE.EDIT:
-        return (
-            <ModalComponent
-              isOpen={isModalOpen}
-              closeModal={closeModal}
-              maxWidth={412}
-            >
-              <Formik
-                enableReinitialize
-                initialValues={promotionInitialValues}
-                validationSchema={validationSchema}
-                onSubmit={() => {}}
-              >
-                {(props: FormikProps<CreatePromotionFormKeysProps>) => {
-                  return <CreatPromotionFrom {...props} closeModal={closeModal} edit/>;
-                }}
-              </Formik>
-            </ModalComponent>
-          );
+      return (
+        <ModalComponent
+          isOpen={isModalOpen}
+          closeModal={closeModal}
+          maxWidth={412}
+        >
+          <Formik
+            enableReinitialize
+            initialValues={promotionInitialValues}
+            validationSchema={validationSchema}
+            onSubmit={handleEdit}
+          >
+            {(props: FormikProps<CreatePromotionFormKeysProps>) => {
+              return (
+                <CreatPromotionFrom {...props} closeModal={closeModal} edit />
+              );
+            }}
+          </Formik>
+        </ModalComponent>
+      );
     case PROMOTION_MODAL_STATE.DELETE:
       return (
         <ModalComponent
