@@ -64,7 +64,7 @@ const dashboardSlice = createSlice({
       state.error = null;
     },
     totalCarSuccess: (state, action: PayloadAction<CarResponse>) => {
-      state.loading = true;
+      state.loading = false;
       state.carAmount = action.payload.carAmount;
     },
     totalCarFailure: (state, action: PayloadAction<string>) => {

@@ -8,6 +8,7 @@ import { Select } from "antd";
 import YearSelector from "../share/yearSelect/yearSelect";
 import AreaCarChart from "../share/chart/AreaCharts/areaChartsCar";
 import PeakTimeChart from "../share/chart/AreaCharts/areaChartsTime";
+import LoadingScreen from "../loadingScreen/loading";
 
 const DashBoardPageContainer: React.FC = () => {
   const {
@@ -22,6 +23,7 @@ const DashBoardPageContainer: React.FC = () => {
     graph,
     graphCar,
     graphTime,
+    loading,
   } = useDashboard();
   return (
     <div className={styles.wrapper}>
@@ -79,6 +81,7 @@ const DashBoardPageContainer: React.FC = () => {
           handleYearChange={handledYearChange}
         />
       </div>
+      {loading && <LoadingScreen />}
     </div>
   );
 };

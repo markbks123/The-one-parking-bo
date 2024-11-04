@@ -4,6 +4,7 @@ import nextRuntimeDotenv from "next-runtime-dotenv";
 const withConfig = nextRuntimeDotenv({
   public: [
     "NEXT_PUBLIC_API_BASE_URL", // Client-side environment variables
+   "NEXT_PUBLIC_AUTH_TOKEN_STORAGE_KEY"
   ],
 });
 

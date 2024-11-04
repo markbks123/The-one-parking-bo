@@ -28,7 +28,7 @@ const LoginForm = ({}: LoginFormProps) => {
           // className={styles.input}
           required
         />
-        <button className="primary" type="submit">
+        <button className={styles.buttonSubmit} type="submit">
           เข้าสู่ระบบ
         </button>
       </section>

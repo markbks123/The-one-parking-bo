@@ -5,12 +5,15 @@ import { validationSchema } from "./login.validation";
 import { LoginFormKeysProps } from "./login.types";
 import LoginFrom from "./login.from";
 import { useLoginPage } from "./login.hook";
+import Image from "next/image";
+import LoadingScreen from "../loadingScreen/loading";
 const LoginPageContainer: React.FC = () => {
-  const { handleSubmit } = useLoginPage();
+  const { handleSubmit, loading } = useLoginPage();
 
   return (
     <div className={styles.container}>
-      <h1>Login</h1>
+      <Image src={"/images/logo_one.png"} width={150} height={150} alt={""} />
+
       <Formik
         enableReinitialize
         initialValues={initialValues}
@@ -21,6 +24,7 @@ const LoginPageContainer: React.FC = () => {
           return <LoginFrom check={"s"} {...props} />;
         }}
       </Formik>
+      {loading && <LoadingScreen />}
     </div>
   );
 };
