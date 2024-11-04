@@ -13,6 +13,7 @@ import {
   DeletePromotionRequest,
   EditCreatePromotionRequest,
 } from "@/redux/slices/promotion/proMotion.utils";
+import { toast } from "react-toastify";
 
 export const usePromotionModal = (
   { promotion }: { promotion: PromotionTableColumns },
@@ -45,6 +46,25 @@ export const usePromotionModal = (
         if (check) {
           dispatch(getProMotionTable(() => {}));
           closeModal();
+           toast.success("เพิ่มแพ็คเก็จเรียบร้อย", {
+            position: "top-right", // You can change position as needed
+            autoClose: 5000, // Auto close after 5 seconds
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        } else {
+            toast.error("เกิดข้อผิดพลาด", {
+            position: "top-right", // You can change position as needed
+            autoClose: 5000, // Auto close after 5 seconds
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       })
     );
@@ -58,6 +78,25 @@ export const usePromotionModal = (
         if (check) {
           dispatch(getProMotionTable(() => {}));
           closeModal();
+           toast.success("ลบแพ็คเก็จเรียบร้อย", {
+            position: "top-right", // You can change position as needed
+            autoClose: 5000, // Auto close after 5 seconds
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        } else {
+            toast.error("เกิดข้อผิดพลาด", {
+            position: "top-right", // You can change position as needed
+            autoClose: 5000, // Auto close after 5 seconds
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       })
     );
@@ -79,6 +118,25 @@ export const usePromotionModal = (
         if (check) {
           dispatch(getProMotionTable(() => {}));
           closeModal();
+             toast.success("แก้ไขแพ็คเก็จเรียบร้อย", {
+            position: "top-right", // You can change position as needed
+            autoClose: 5000, // Auto close after 5 seconds
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        }else {
+            toast.error("เกิดข้อผิดพลาด", {
+            position: "top-right", // You can change position as needed
+            autoClose: 5000, // Auto close after 5 seconds
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       })
     );

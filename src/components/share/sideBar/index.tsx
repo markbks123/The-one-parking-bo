@@ -5,8 +5,9 @@ import { LIST_MENU } from "./sideBar.utils";
 import { SidebarMainProps } from "./expandList.types";
 import { useSideBar } from "./sideBar.hook";
 import Image from "next/image";
+import session from "@/utils/session";
 const SidebarMain = ({ asPath, pathname }: SidebarMainProps) => {
-  const { currentTab, currentSubMenu } = useSideBar({
+  const { currentTab, currentSubMenu, router } = useSideBar({
     asPath,
     pathname,
   });
@@ -53,6 +54,10 @@ const SidebarMain = ({ asPath, pathname }: SidebarMainProps) => {
         <li
           style={{
             paddingTop: "36px",
+          }}
+          onClick={() => {
+            session.clearLogout();
+            router.push("/login");
           }}
         >
           Logout

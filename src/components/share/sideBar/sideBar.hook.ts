@@ -1,8 +1,9 @@
 import { useMemo } from "react";
 import { UseNavbarHeaderProps } from "./expandList.types";
+import { useRouter } from "next/router";
 
 export const useSideBar = ({ pathname }: UseNavbarHeaderProps) => {
-
+  const router = useRouter();
 
   const currentTab: string = useMemo(() => {
     if (pathname) {
@@ -22,5 +23,6 @@ export const useSideBar = ({ pathname }: UseNavbarHeaderProps) => {
 
   
 
-  return { currentTab, currentSubMenu };
-};
+
+  return { currentTab, currentSubMenu, router}
+}

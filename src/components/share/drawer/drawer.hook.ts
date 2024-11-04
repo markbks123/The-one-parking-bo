@@ -13,5 +13,5 @@ export const useDrawer = () => {
   }
   
 
-  return { navigation};
+  return { router,navigation};
 };

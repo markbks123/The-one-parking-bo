@@ -1,3 +1,4 @@
+import LoadingScreen from "../loadingScreen/loading";
 import PromotionModal from "../modals/promotion/promotionModal";
 import DataTable from "../share/dataTable/dataTable";
 import SvgIcon from "../share/svgIcon/svgIcon";
@@ -15,6 +16,7 @@ const PromotionContainer = () => {
     closeModal,
     openModal,
     createPromotion,
+    loading,
   } = usePromotion();
   return (
     <div className={styles.wrapper}>
@@ -40,6 +42,7 @@ const PromotionContainer = () => {
           promotion={promotion}
         />
       )}
+      {loading && <LoadingScreen />}
     </div>
   );
 };

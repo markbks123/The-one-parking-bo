@@ -1,7 +1,8 @@
-import axios, { AxiosInstance,  AxiosResponse, AxiosError, AxiosRequestConfig } from "axios";
-import getConfig from "next/config";
-import { camelizeKeys, snakeCaseKeys } from "./api.utils";
+import axios, { AxiosInstance,  AxiosResponse, AxiosError, AxiosRequestConfig, InternalAxiosRequestConfig, AxiosRequestHeaders } from "axios";
 
+import { camelizeKeys, snakeCaseKeys } from "./api.utils";
+import session from "@/utils/session";
+import { jwtDecode } from "jwt-decode";
 const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 
@@ -23,14 +24,44 @@ class ApiClient {
     this.http.interceptors.request.use(
       async (config) => ({
         ...config,
-        headers:  config.headers,
+           headers: await this.prepareRequestHeaders(config.headers), 
         data: this.prepareRequestBody(config.data, config.params),
         params: this.prepareRequestParams(config.params),
       }),
      
     );
 
-   
+   this.http.interceptors.request.use(
+      async (config) => {
+       
+        const savedUser = session.getKeyStorage("user");
+        let accessToken = session.getKeyStorage("accessToken");
+
+        if ( accessToken) {
+          const decodedToken = jwtDecode(accessToken);
+          const currentTime = Date.now() / 1000; // แปลงเวลาเป็นหน่วยวินาที
+
+          // ตรวจสอบว่า Access Token หมดอายุหรือไม่
+          if (decodedToken.exp && decodedToken.exp < currentTime) {
+            try {
+                session.clearLogout(); // รีเฟรช Access Token
+            } catch (error) {
+              session.clearLogout();
+              return Promise.reject(error);
+            }
+          }
+          // ตั้งค่า Authorization header ใหม่
+          config.headers.Authorization = ` ${accessToken}`;
+          
+        }
+            
+    return config;
+  
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
     this.http.interceptors.response.use(
       (response) => this.handleSuccess(response),
       (error) => this.handleError(error)
@@ -65,6 +96,9 @@ class ApiClient {
 
  private prepareResponseData(data: any) {
     return camelizeKeys(data);
+  }
+private prepareRequestHeaders(headers: AxiosRequestHeaders) {
+    return session.setHeader(headers);
   }
 
   private handleSuccess(response: AxiosResponse) {

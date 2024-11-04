@@ -5,8 +5,9 @@ import { useDrawer } from "./drawer.hook";
 import { Drawer } from "antd";
 import styles from "./drawer.module.css";
 import Image from "next/image";
+import session from "@/utils/session";
 const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
-  const { navigation } = useDrawer();
+  const { navigation, router } = useDrawer();
 
   return (
     <Drawer
@@ -57,6 +58,15 @@ const DrawerContainer = ({ open, onClose }: DrawertypeProps) => {
             {e.name}
           </div>
         ))}
+        <div
+          className={styles.button}
+          onClick={() => {
+            session.clearLogout();
+            router.push("/login");
+          }}
+        >
+          Logout
+        </div>
       </div>
     </Drawer>
   );

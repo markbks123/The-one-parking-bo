@@ -11,6 +11,7 @@ import SvgIcon from "../share/svgIcon/svgIcon";
 import { PROMOTION_MODAL_STATE } from "../modals/promotion/promotionModal.utils";
 import useModal from "@/hooks/useModal";
 import { setLayout } from "@/redux/slices/layout/layoutSlice";
+import { PACKAGE_TYPE } from "@/redux/slices/promotion/proMotion.utils";
 
 export const usePromotion = () => {
   const dispatch = useAppDispatch();
@@ -18,27 +19,24 @@ export const usePromotion = () => {
     (state: RootState) => state.promotion.packageTable
   );
 
-  const loading = useSelector((state: RootState) => state.dashboard.loading);
+  const loading = useSelector((state: RootState) => state.promotion.loading);
   const columnHelper = createColumnHelper<PromotionTableColumns>();
   const [modalState, setModalState] = useState<PROMOTION_MODAL_STATE>(
     PROMOTION_MODAL_STATE.DELETE
   );
   const [promotionName, setProMotionName] = useState<string>();
-  const [promotion, setProMotion] = useState<PromotionTableColumns>(
-    {
-    id:"",
-    package:"",
-    amount:0,
-    days:0,
-    isActive:false,
-    startAt:"",
-    expiredAt:"",
-    createdAt:"",
-    updatedAt:"",
-    packageType:"",
-  
-    }
-  );
+  const [promotion, setProMotion] = useState<PromotionTableColumns>({
+    id: "",
+    package: "",
+    amount: 0,
+    days: 0,
+    isActive: false,
+    startAt: "",
+    expiredAt: "",
+    createdAt: "",
+    updatedAt: "",
+    packageType: PACKAGE_TYPE.STANDARD,
+  });
   const [isOpen, openModal, closeModal] = useModal();
 
   useEffect(() => {
@@ -58,7 +56,10 @@ export const usePromotion = () => {
         expiredAt: e.expiredAt,
         createdAt: e.createdAt,
         updatedAt: e.updatedAt,
-        packageType: e.packageType,
+        packageType:
+          e.packageType === "STANDARD"
+            ? PACKAGE_TYPE.STANDARD
+            : PACKAGE_TYPE.PROMOTION,
       }));
     }
     return [];
@@ -137,7 +138,7 @@ export const usePromotion = () => {
                 <li
                   onClick={() => {
                     setProMotionName(info.row.original.package);
-                    setProMotion(info.row.original)
+                    setProMotion(info.row.original);
                     setModalState(PROMOTION_MODAL_STATE.EDIT);
                     openModal();
                   }}
@@ -147,7 +148,7 @@ export const usePromotion = () => {
                 <li
                   onClick={() => {
                     setProMotionName(info.row.original.package);
-                    setProMotion(info.row.original)
+                    setProMotion(info.row.original);
                     setModalState(PROMOTION_MODAL_STATE.DELETE);
                     openModal();
                   }}
@@ -175,8 +176,9 @@ export const usePromotion = () => {
     isOpen,
     modalState,
     promotion,
+    loading,
     closeModal,
     openModal,
-    createPromotion
+    createPromotion,
   };
 };

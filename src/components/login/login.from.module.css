@@ -7,6 +7,7 @@
   }
   
   .container > section:nth-child(1) > .input > div:first-child {
+      max-width: 475px;
     top: 0.75rem;
   }
   
@@ -30,14 +31,21 @@
     border-right: unset;
     @apply pr-0;
   }
+
+
+    .buttonSubmit {
+      max-width: 200px;
+      background-color: var(--sidbar-color);
+      color: var(--white-color);
+      @apply font-semibold text-lg py-4 px-5 rounded-lg text-center;
+      @apply w-full mx-auto;
+    }
   
   @media screen and (max-width: 767px) {
   }
   
   @media screen and (min-width: 768px) {
-    .container {
-      max-width: 475px;
-    }
+    
   }
   
   @media screen and (min-width: 1024px) {
